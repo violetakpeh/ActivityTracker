@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="form-outline" align="center">
+    <h4 style="align-content: center; color: #8c14dc"> View task....</h4>
+</div>
+<div class = "col-md-6 col-md-offset-3" style="align-content: center; margin-left: 50px">
+    <form th:object="${singleTask}" method="POST">
+        <input name="hide" th:value="${singleTask.getId()}" hidden>
+
+        <div class="form-outline"> Title
+            <label for="status2" class="form-control-label">Title</label>
+            <p class="form-control" id="status2" th:text="${singleTask.getTitle()}"></p>
+
+        </div> <br>
+
+        <div class="form-outline"> Description
+
+            <label for="status1" class="form-control-label">Description</label>
+            <p class="form-control" id="status1" th:text="${singleTask.getDescription()}"></p>
+        </div>
+        <br>
+
+        <div>
+            <label for="status" class="form-control-label">Status</label>
+            <p class="form-control" id="status" th:text="${singleTask.getStatus()}"></p>
+        </div>
+
+        <div>
+            <label for="status7" class="form-control-label">Time Created</label>
+            <p class="form-control" id="status7" th:text="${singleTask.getCreatedAt()}"></p>
+        </div>
+
+        <div>
+            <label for="status7" class="form-control-label">Time Updated</label>
+            <p class="form-control" id="status8" th:text="${singleTask.getUpdatedAt()}"></p>
+        </div>
+
+        <br>
+        <div>
+            <label for="status7" class="form-control-label">Time Completed</label>
+            <p class="form-control" id="status9" th:text="${singleTask.getCompletedAt()}"></p>
+        </div>
+
+
+        <div>
+                <a th:href="@{/dashboard}" class="btn btn-primary">Back</a>
+            </div>
+    </form>
+</div>
+</body>
+</html>
